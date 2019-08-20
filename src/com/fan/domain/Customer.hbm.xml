@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 在实体类所在的包下，创建一个xml文件，改文件建议名称为实体类名称 + . + hbm + . + xml 
+      导入 dtd 约束  
+ -->
+ 
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping package="com.fan.domain">
+	<class name="Customer"  table="cst_customer">
+		<id name="cusId" column="cust_id">
+		<!-- 指定主键的生产方式， native 使用数据库的自动增长 -->
+			<generator class="native"></generator>		
+		</id>
+		<property name="custName" column="cust_ame"></property>
+		<property name="custAge" column="cust_age"></property>
+	</class>
+</hibernate-mapping>
+    
+   

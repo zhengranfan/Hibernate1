@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 在src目录下创建配置文件
+导入dtd文件 -->
+
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	
+<hibernate-configuration>
+
+<!-- 创建Session对象 -->
+ <session-factory>
+   <!--  配置sessionFactory对象 
+   		SesstionFactory就是用来创建Session对象的
+   		Session对象就是创建hibernate操作数据库的核心
+   		创建SessionFactory必须的三部分信息 -->
+   		
+   	<!-- 第一部分：数据库连接信息 -->
+   		<property name="hibernate.connection.driver_class"> com.mysql.cj.jdbc.Driver </property>	
+   		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate01</property>	
+   		<property name="hibernate.connection.username">root</property>	
+   		<property name="hibernate.connection.password">11111111</property>	
+   		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>	
+   		
+	<!--  第二部分：hibernate的可选配置-->
+   		<property name="hibernate.show_sql">true</property>
+   		<property name="hibernate.format_sql">true</property>
+   		<property name="hibernate.hbm2ddl.auto">update</property>
+   		<property name="hibernate.connection.provider_class">
+   		org.hibernate.connection.C3P0ConnectionProvider</property> 
+   		
+	<!--  第三部分：映射配置文件的位置 -->
+   		 
+   		 <mapping resource="com/fan/domain/Customer.hbm.xml"/>
+   		 
+ 	
+ 
+ </session-factory>
+
+</hibernate-configuration>
